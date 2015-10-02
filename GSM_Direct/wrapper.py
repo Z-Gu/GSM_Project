@@ -28,7 +28,7 @@ def init(tty):
 #Establish connection in the serial port
 #########		
 
-num = "+447923598328"
+num = ""
 
 if '+' in argv[-1]:
 	num = argv[-1]
