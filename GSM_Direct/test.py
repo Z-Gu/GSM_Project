@@ -1,4 +1,7 @@
 #!/usr/bin/python
+
+#Demonstrates the encoding and decoding
+
 from seg_temp import *
 from decoder import decode
 
