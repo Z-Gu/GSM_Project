@@ -1,0 +1,20 @@
+#####
+#Contact:
+#Zhengyang Gu
+#zg245@cam.ac.uk
+#+447923598328
+#####
+
+Run the script as:
+
+	./wrapper.py [options] number
+
+	[options]
+
+	v : verbose, display the output from GSM module with more detail
+
+	number:
+
+	enter the target mobile number, starting with +XX, where XX is region code
+	a default value can be set by editting the "num = " line in wrapper.py
+	
