@@ -9,9 +9,14 @@ Run the script as:
 
 	./wrapper.py [options] number
 
+	e.g. ./wrapper.py ve +447923598328
+
+	send a template for enrollment with verbose debug output to ME (Please do not use this number...)
+
 	[options]
 
 	v : verbose, display the output from GSM module with more detail
+	e : enable enrollment
 
 	number:
 
