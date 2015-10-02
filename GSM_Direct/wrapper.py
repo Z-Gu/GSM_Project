@@ -67,8 +67,11 @@ print "Fingerprint received"
 
 #The data is processed
 
+if len(argv) > 2 and 'e' not in argv[1]:
+    to_send = data_process.data_process(file)
 
-to_send = data_process.data_process(file)
+else:
+    to_send = data_process.data_process(file, True)
 
 i = 0
 
@@ -101,12 +104,12 @@ while i < len(to_send):
 		s = tmpc
 		while "OK" not in s:
 			
-			if len(argv) > 1 and 'v' in argv[1]:
+			if len(argv) > 2 and 'v' in argv[1]:
 				print s
 			time.sleep(0.01)
 			tmpc = tty.read()
 			s += tmpc
-			if len(argv) > 1 and 'v' in argv[1]:
+			if len(argv) > 2 and 'v' in argv[1]:
 				print s
 			if "ERROR" in s or (len(s) > 25 and tmpc == ''):
 				print s
