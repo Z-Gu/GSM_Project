@@ -1,0 +1,41 @@
+#####
+#Zhengyang Gu
+#zg245@cam.ac.uk
+#z.gu@outlook.com
+#+447923598328
+#####
+
+GSM_Direct:
+
+	Sending SMS directly using GSM modem
+
+GSM_UBlox:
+
+	Sending SMS with UBlox-C027
+	Meant to be easy to modify for use in other Demo-Projects...
+	
+General:
+
+Wiring:
+
+        BBB -> UBLOX
+	P9_1 -> GND
+	P9_11 -> TX
+	P9_13 -> RX
+
+	Template compression:
+
+	removed "FMR0"
+	all tailing 0 in the templates are removed, instead a number indicating the number of tailing 0s is appended to the end
+	template is compressed using zip.py, which is a library written by me that encodes 3 hexadecimals into 2 characters in a 64-char system
+	in the first SMS, the header is encoded in the following way:
+		prime_table = [1,3,5,7,11,13,17,19,23,29,31,37,41,43]
+		z = n * m * e
+		where :
+			e = 2 if enrollment, 1 otherwise
+			n = xth object in prime_table, x is the segment id
+			m = yth object in prime_table, y is the total number of segemnts
+			z should be an integer < 4096 (0xfff)
+			header = z compressed into 2 64-char
+
+//IF YOU SEE ANYTHING WIERD, BLAME IT ON THE NOISE FIRST!!!
